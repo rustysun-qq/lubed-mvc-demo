@@ -1,0 +1,27 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0",
+        "lubed/http-application": "dev-main"
+    },
+    "config": {
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "./app/"
+        }
+    },
+    "scripts": {
+
+    },
+    "conflict": {
+    },
+    "extra": {
+        "lubed":{
+            "starter":"\\Lubed\\HttpApplication\\HttpApplicationtStarter"
+        }
+    }
+}
