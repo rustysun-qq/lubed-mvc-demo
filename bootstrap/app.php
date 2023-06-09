@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__.'/../vendor/autoload.php';
 $root_path=dirname(__DIR__);
 $autoload_file=sprintf('%s/vendor/autoload.php',$root_path);
 
@@ -25,8 +24,8 @@ $config_data = [
                 'view' => [
                     'class' => '\\Lubed\\MVCKernel\\HtmlView',
                     'path' =>[
-                        'source'=> sprintf('%s/resource/views/whoops',$root_path),//views source path
-                        'cached' => sprintf('%s/runtime/cached/views/whoops',$root_path),//views cached path
+                        'source'=> sprintf('%s/resource/views',$root_path),//views source path
+                        'cached' => sprintf('%s/runtime/cached/views',$root_path),//views cached path
                     ],
                     'parser'=>'\\Lubed\\BladeParser\\BladeParser'
                 ],

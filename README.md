@@ -1,7 +1,5 @@
 # lubed-mvc-demo
 
-### 如何运行demo
-
 1.下载代码到本地
 
 ```
