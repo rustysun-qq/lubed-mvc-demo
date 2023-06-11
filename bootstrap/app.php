@@ -16,18 +16,32 @@ use Lubed\HttpApplication\HttpApplicationStarter;
 $config_data = [
     //APPLICATION ROOT PATH
     'root_path' => $root_path,
+    'exception_capturer'=>[
+        'class'=>'\\Lubed\Exceptions\\ExceptionCapturer',
+        'handler_class'=>'\\Lubed\Exceptions\\ExceptionHandler',
+        'render'=>[
+            'class' => '\\Lubed\\MVCKernel\\Views\\ExceptionView',
+            'path' =>[
+                'source'=> sprintf('%s/resource/views',$root_path),//views source path
+                'cached' => sprintf('%s/runtime/cached/views',$root_path),//views cached path
+            ],
+            'suffix'=>'.html.php',
+            'view_name'=>'whoops/failed'
+        ]
+    ],
     //HTTP MVC kernel
     'kernel' => [
         'starter' =>[
             'class'=> '\\Lubed\\MVCKernel\\MVCStarter',
             'parameters'=>[
                 'view' => [
-                    'class' => '\\Lubed\\MVCKernel\\HtmlView',
+                    'class' => '\\Lubed\\MVCKernel\\Views\\HtmlView',
                     'path' =>[
                         'source'=> sprintf('%s/resource/views',$root_path),//views source path
                         'cached' => sprintf('%s/runtime/cached/views',$root_path),//views cached path
                     ],
-                    'parser'=>'\\Lubed\\BladeParser\\BladeParser'
+                    'parser'=>'\\Lubed\\BladeParser\\BladeParser',
+                    'suffix'=>'.html.php'
                 ],
             ]
         ]
