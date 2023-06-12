@@ -40,7 +40,6 @@ $config_data = [
                         'source'=> sprintf('%s/resource/views',$root_path),//views source path
                         'cached' => sprintf('%s/runtime/cached/views',$root_path),//views cached path
                     ],
-                    'parser'=>'\\Lubed\\BladeParser\\BladeParser',
                     'suffix'=>'.html.php'
                 ],
             ]
@@ -50,6 +49,13 @@ $config_data = [
     'router' => [
         'class'=> '\\Lubed\\Router\\RouterStarter',
         'parameters'=> sprintf('%s/resource/config/routes.php',$root_path),
+    ],
+    //DATA SOURCE
+    'data_sources'=>[
+        'default'=>'demo',
+        'connections'=>[
+            "demo" => "MySQL://root:'root'@localhost:33061/lubye"
+        ]
     ]
 ];
 
