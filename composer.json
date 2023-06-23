@@ -5,9 +5,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=8.0",
-        "lubed/utils": "dev-main",
-        "lubed/http-application": "dev-main",
-        "lubed/data":"dev-main"
+        "lubed/utils": "0.2",
+        "lubed/http-application": "0.2",
+        "lubed/data":"0.2"
     },
     "config": {
     },
